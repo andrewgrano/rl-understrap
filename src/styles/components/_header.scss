@@ -1,0 +1,42 @@
+.header {
+    padding-top: 20px;
+    margin-bottom: 25px;
+
+    &__logo {
+        img {
+            width: 360px;
+        }
+    }
+
+    &__nav {
+        text-align: right;
+        margin-top: 40px;
+
+        & > ul {
+            margin: 0;
+            li {
+                display: inline-block;
+                margin-right: 25px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                a {
+                    color: $black;
+                    font-size: 23px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .instagramLink {
+        border-radius: 0 0 11px 11px;
+        position: absolute;
+        right: 0px;
+        top: -20px;
+    }
+
+}
+

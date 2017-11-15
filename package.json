@@ -1,0 +1,36 @@
+{
+  "name": "rl-understrap",
+  "version": "1.0.0",
+  "description": "wordpress theme",
+  "main": "index.php",
+  "scripts": {
+    "scss": "node-sass --output-style compressed -o public/css src/styles/styles.scss",
+    "autoprefixer": "postcss -u autoprefixer -r public/css/*",
+    "lint": "eslint src/scripts; exit 0",
+    "uglify": "mkdir -p public/js && uglifyjs src/scripts/*.js -m -o public/js/main.js && uglifyjs src/scripts/*.js -m -c -o public/js/main.min.js",
+    "imagemin": "imagemin src/images/* --out-dir=public/img",
+    "browsersync": "browser-sync start --proxy 127.0.0.1:7000 --logLevel 'info' --no-ghost-mode --no-open --no-notify --files '**/*, !src/js**, !src/css/**, !public/css/*.map, !public/js/**, !.git/**'",
+    "wordpress": "cd ../../../ && pwd && php -S 127.0.0.1:7000 -c php.ini",
+    "build-css": "npm run scss && npm run autoprefixer",
+     "build-js": "npm run uglify",
+    "build-images": "npm run imagemin",
+    "build-all": "npm run build-css && npm run build-js && npm run build-images",
+    "watch-css": "onchange 'src/styles/*/*.scss' -- npm run build-css",
+    "watch-js": "onchange 'src/scripts/*.js' -- npm run build-js",
+    "watch-all": "parallelshell 'npm run browsersync' 'npm run watch-css' 'npm run watch-js'",
+    "postinstall": "npm run watch-all"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.5",
+    "browser-sync": "^2.18.13",
+    "eslint": "^4.9.0",
+    "imagemin-cli": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "onchange": "^3.2.1",
+    "parallelshell": "^3.0.2",
+    "postcss-cli": "^4.1.1",
+    "uglify-js": "^3.1.4"
+  }
+}
