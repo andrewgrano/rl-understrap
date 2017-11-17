@@ -66,8 +66,24 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 		</div>
 
-		<!-- The pagination component -->
-		<?php understrap_pagination(); ?>
+
+            <?php
+            	$authorObject = get_queried_object();
+
+
+				if(is_author()){
+					if($authorObject->count > 9 ) {
+					   $author_id = get_the_author_meta('ID');
+					   $name = get_the_author_meta('display_name');
+					   echo do_shortcode('[ajax_load_more author="'.$author_id.'" container_type="div" post_type="post" posts_per_page="9" offset="9" pause="true" scroll="false" transition="fade" button_label="View More Stories by '.$curauth->nickname.'" button_loading_label="Loading..." transition_container="false" css_classes="row"]');
+					}
+				}
+             ?>
+
+
+
+		<!-- The pagination component
+		<?php understrap_pagination(); ?>-->
 
 
 	</div><!-- Container end -->

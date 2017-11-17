@@ -110,8 +110,9 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 						<?php // End the loop.
 						endwhile;
-						wp_reset_postdata();
-					} ?>
+					}
+					wp_reset_postdata();
+					 ?>
 				</div>
 			</div>
 
@@ -146,14 +147,15 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				</div> <!-- end row -->
 
+
 			<?php else : ?>
 
 				<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
 			<?php endif; ?>
 
-			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
+			<?php echo do_shortcode("[ajax_load_more container_type='div' post_type='post' posts_per_page='9' offset='14' pause='true' transition='fade' button_label='View More Stories' button_loading_label='Loading...' scroll='false' transition_container='false' css_classes='row' ]"); ?>
+
 
 		</div> <!-- end container -->
 	</main><!-- #main -->

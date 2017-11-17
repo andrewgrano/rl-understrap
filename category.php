@@ -61,8 +61,18 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
                 <?php endif; ?>
 
-                <!-- The pagination component -->
-                <?php understrap_pagination(); ?>
+                <?php
+                $category = get_queried_object();
+
+                if(is_category()){
+                    if($category->count > 9 ) {
+                       $cat = get_query_var('cat');
+                       $category = get_category ($cat);
+                       echo do_shortcode('[ajax_load_more category="'.$category->slug.'" cache="true" cache_id="cache-'.$category->slug.' container_type="div" post_type="post" posts_per_page="9" offset="9" pause="true" scroll="false" transition="fade" button_label="View More '.$category->cat_name.' Stories" button_loading_label="Loading..." transition_container="false" css_classes="row"]');
+                    }
+                }
+                 ?>
+
 
                 <hr>
                 <div class="more">
