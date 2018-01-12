@@ -1,0 +1,28 @@
+.breadcrumbs {
+    background: $light-gray;
+    color: $dark-gray;
+    border-top: 7px solid $primary-color;
+    font-family: $displayFont;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    padding: 10px 15px 7px;
+
+    span {
+        &:last-child {
+            display: none;
+        }
+    }
+
+    a {
+        text-decoration: underline;
+
+        &:last-child {
+            text-decoration: none;
+        }
+    }
+}
+
+.hr--primary + .breadcrumbs {
+    border-top: 0 none;
+}

@@ -13,13 +13,20 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="postWidgetHorizontal__img">
-                    <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+                    <?php
+                        $potentialImgHostPaths = array("https://www.adminroaminglove.com/wp-content/uploads/", "https://adminroaminglove.com/wp-content/uploads/", "https://www.roaminglove.com/wp-content/uploads/", "http://127.0.0.1:7000/wp-content/uploads/");
+                        $ogImgSrc = get_the_post_thumbnail_url( $post->ID, 'large' );
+                        $imgsrc = str_replace($potentialImgHostPaths,'https://roaminglove.imgix.net/', $ogImgSrc);
+                    ?>
+
+                    <img src="<?php echo $imgsrc ?>?w=257&h=185&fit=crop&crop=entropy&auto=compress,format">
+
                 </div>
             </div>
 
             <div class="col-sm-6">
                 <div class="postWidgetHorizontal__content">
-                    <?php the_title( sprintf( '<div class=""postWidgetHorizontal__title">' ),
+                    <?php the_title( sprintf( '<div class="postWidgetHorizontal__title">' ),
                     '</div>' ); ?>
 
                     <?php if ( 'post' == get_post_type() ) : ?>

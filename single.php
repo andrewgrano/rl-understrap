@@ -15,6 +15,28 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 		<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
+			<div class="headerWindow">
+				<div id="js-parallax-window" class="parallax-window">
+					<div class="parallax-static-content">
+						<h1>
+							<?php understrap_entry_categories2(); ?>
+						</h1>
+					</div>
+
+			        <?php
+				        $potentialImgHostPaths = array("https://www.adminroaminglove.com/wp-content/uploads/", "https://adminroaminglove.com/wp-content/uploads/", "https://www.roaminglove.com/wp-content/uploads/", "http://127.0.0.1:7000/wp-content/uploads/");
+				        $ogImgSrc = get_the_post_thumbnail_url('', 'article-thumbnail-image');
+				        $imgsrc = str_replace($potentialImgHostPaths,'https://roaminglove.imgix.net/', $ogImgSrc);
+			        ?>
+
+					<div id="js-parallax-background" class="parallax-background" style="background-image: url(<?php echo $imgsrc ?>?w=1110&h=400&fit=crop&crop=focalpoint&blend=2693BB&bm=lighten&auto=compress,format)">
+					</div>
+				</div>
+			</div>
+
+			<hr class="hr--primary">
+
+
 			<div class="row justify-content-md-center">
 				<div class="col-sm-9">
 

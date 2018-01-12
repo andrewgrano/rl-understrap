@@ -1,0 +1,93 @@
+.destinations {
+    &__header {
+        color: $white;
+        font-family: $displayFont;
+        font-weight: 700;
+        margin-bottom: 45px;
+        border-top: 7px solid $primary-color;
+        border-bottom: 7px solid $primary-color;
+
+        &.parallax-window {
+            opacity: 1;
+        }
+
+        h2 {
+            font-size: 58px;
+            font-weight: 700;
+            margin-top: 70px;
+            margin-bottom: 25px;
+        }
+
+        a {
+            color: $white;
+            text-decoration: underline;
+        }
+    }
+
+    &__country {
+        padding-bottom: 100px;
+    }
+
+    &__sidebar {
+        overflow: scroll;
+        height: 100vh;
+        position: relative;
+        background: $light-gray;
+        position: relative;
+        border-top: 7px solid $primary-color;
+        padding: 25px 0;
+
+        & > nav {
+            display: block;
+            width: 100%;
+        }
+
+        .nav-link {
+            width: 100%;
+            font-size: 22px;
+            padding-left: 35px;
+            position: relative;
+
+            &:before {
+                content: "\00bb";
+                position: absolute;
+                top: 11px;
+                left: 12px;
+                font-size: 16px;
+                transform: rotate(0deg);
+                transition: transform 0.5s;
+            }
+
+            & + ul {
+                display: none;
+                margin: 0;
+                padding: 0.75em 0 1em 3em;
+                width: 100%;
+                background: #e0e0e0;
+                border-top: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+
+                li {
+                    margin-bottom: 0.3em;
+                }
+            }
+
+            &.active {
+
+                &:before {
+                    transform: rotate(90deg);
+                }
+
+                & + ul {
+                    display: block;
+                }
+            }
+        }
+
+        .mCustomScrollBox {
+            width: 100%;
+        }
+
+
+    }
+}

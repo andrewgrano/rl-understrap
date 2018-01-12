@@ -60,7 +60,7 @@ function understrap_posted_on() {
 	);
 	$posted_on = sprintf(
 		esc_html_x( ' on %s', 'post date', 'understrap' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		 $time_string
 	);
 	$byline = sprintf(
 		esc_html_x( 'by %s', 'post author', 'understrap' ),
@@ -123,7 +123,7 @@ function understrap_entry_categories2() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = strip_tags( get_the_category_list( esc_html__( ', ', 'understrap' ) ));
 		if ( $categories_list && understrap_categorized_blog() ) {
-			printf( '<div class="post__categories">' . esc_html__( '%1$s', 'understrap' ) . '</div>', $categories_list ); // WPCS: XSS OK.
+			printf( '<div class="">' . esc_html__( '%1$s', 'understrap' ) . '</div>', $categories_list ); // WPCS: XSS OK.
 		}
 	}
 }

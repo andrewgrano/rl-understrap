@@ -13,8 +13,8 @@
         }
 
         .owl-item {
-            widows: 1140px;
-            height: 400px;
+            // width: 1110px;
+            height: 389px;
             position: relative;
 
             // @media screen and (max-width: 1199px) {
@@ -83,6 +83,7 @@
                     h4 {
                         margin: 0;
                         font-size: 28px;
+                        font-weight: 700;
 
                         // @media screen and (max-width: 767px) {
                         //     font-size: 24px;
@@ -139,3 +140,15 @@
 
     }
 }
+
+.indexLocations {
+    padding-top:50px;
+    margin-bottom: 50px;
+
+    .pageHeading {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+}
+
+

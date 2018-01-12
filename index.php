@@ -38,7 +38,15 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 						<?php while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
 						<a class="itemLink" href="<?php the_permalink(); ?>">
 							<?php if ( has_post_thumbnail() ) { ?>
-								<?php the_post_thumbnail('index-carousel'); ?>
+
+		                        <?php
+		                        $potentialImgHostPaths = array("https://www.adminroaminglove.com/wp-content/uploads/", "https://adminroaminglove.com/wp-content/uploads/", "https://www.roaminglove.com/wp-content/uploads/", "http://127.0.0.1:7000/wp-content/uploads/");
+		                        $ogImgSrc = get_the_post_thumbnail_url($post->ID, 'full');
+		                        $imgsrc = str_replace($potentialImgHostPaths,'https://roaminglove.imgix.net/', $ogImgSrc);
+		                        ?>
+		                        <img class="index-carousel" src="<?php echo $imgsrc ?>?w=1110&h=389&fit=crop&crop=focalpoint&auto=format&q=58">
+
+								<?php /* the_post_thumbnail('index-carousel');*/ ?>
 							<?php } ?>
 							<div class="itemContent">
 								<h3>
@@ -89,9 +97,15 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 											$i = 0;
 											foreach($images as $image) {
 												if($i < 2) {
+
+					                        $potentialImgHostPaths = array("https://www.adminroaminglove.com/wp-content/uploads/", "https://adminroaminglove.com/wp-content/uploads/", "https://www.roaminglove.com/wp-content/uploads/", "http://127.0.0.1:7000/wp-content/uploads/");
+					                        $ogImgSrc = wp_get_attachment_image_src($image->ID,'full')[0];
+					                        $imgsrc = str_replace($potentialImgHostPaths,'https://roaminglove.imgix.net/', $ogImgSrc);
+
 										?>
+
 											<div>
-										    	<img src="<?php echo wp_get_attachment_image_src($image->ID,'full')[0]; ?>" />
+										    	<img src="<?php echo $imgsrc?>?w=260&h=175&fit=crop&crop=focalpoint&auto=compress,format" />
 										    </div>
 										<?php
 											}
@@ -102,7 +116,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 									<div class="featureWidget__desc">
 										<?php echo wp_trim_words( get_the_content(), 40, '...')  ?>
 									</div>
-									<div class="btn btnSecondary">
+									<div class="btn btn-primary">
 										 Continue Reading
 									</div>
 								</a>
@@ -156,7 +170,76 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 			<?php echo do_shortcode("[ajax_load_more container_type='div' post_type='post' posts_per_page='9' offset='14' pause='true' transition='fade' button_label='View More Stories' button_loading_label='Loading...' scroll='false' transition_container='false' css_classes='row' ]"); ?>
 
+			<hr class="hr--primary">
 
+			<div class="indexLocations">
+				<h3 class="pageHeading">Read Travel Stories From...</h3>
+				<div class="row">
+					<div class="col-sm-4">
+						<a href="/category/Africa" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/05/IMG_1582.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+				            <h6>
+				              <div><span>Africa</span></div>
+				            </h6>
+			            </a>
+			        </div>
+		            <div class="col-sm-4">
+			            <a href="/category/Asia" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/04/HFA_6084-XL_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+				            <h6>
+				              <div><span>Asia</span></div>
+				            </h6>
+			            </a>
+			        </div>
+		            <div class="col-sm-4">
+			            <a href="/category/Canada" class="locationWidget"><img src="https://roaminglove.imgix.net/2016/12/IMG_2447_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+				            <h6>
+				              <div><span>Canada</span></div>
+				            </h6>
+			            </a>
+			        </div>
+		            <div class="col-sm-4">
+			            <a href="/category/Caribbean" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/04/UriramaBeach_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+				            <h6>
+				              <div><span>Caribbean</span></div>
+				            </h6>
+			            </a>
+			        </div>
+		            <div class="col-sm-4">
+			            <a href="/category/Europe" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/01/6_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+				            <h6>
+				              <div><span>Europe</span></div>
+				            </h6>
+			            </a>
+			        </div>
+		            <div class="col-sm-4">
+			            <a href="/category/Latin-America" class="locationWidget"><img src="https://roaminglove.imgix.net/2016/08/IMG_4026_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+				            <h6>
+				              <div><span>Latin America</span></div>
+				            </h6>
+			            </a>
+			        </div>
+		            <div class="col-sm-4">
+			            <a href="/category/Middle-East" class="locationWidget"><img src="https://roaminglove.imgix.net/2016/12/DSC3297-Copy_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+				            <h6>
+				              <div><span>Middle East</span></div>
+				            </h6>
+			            </a>
+			        </div>
+		            <div class="col-sm-4">
+			            <a href="/category/Oceania" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/05/oceania-2.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+				            <h6>
+				              <div><span>Oceania</span></div>
+				            </h6>
+			            </a>
+			        </div>
+		            <div class="col-sm-4">
+			            <a href="/category/United-States" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/03/D1C56C2D-EDB8-49A2-BBFD-8B6AA8BC3D40_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+				            <h6>
+				              <div><span>United States</span></div>
+				            </h6>
+				        </a>
+				    </div>
+	            </div>
+	        </div>
 		</div> <!-- end container -->
 	</main><!-- #main -->
 

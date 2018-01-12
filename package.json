@@ -12,7 +12,7 @@
     "browsersync": "browser-sync start --proxy 127.0.0.1:7000 --logLevel 'info' --no-ghost-mode --no-open --no-notify --files '**/*, !src/js**, !src/css/**, !public/css/*.map, !public/js/**, !.git/**'",
     "wordpress": "cd ../../../ && pwd && php -S 127.0.0.1:7000 -c php.ini",
     "build-css": "npm run scss && npm run autoprefixer",
-     "build-js": "npm run uglify",
+    "build-js": "npm run uglify",
     "build-images": "npm run imagemin",
     "build-all": "npm run build-css && npm run build-js && npm run build-images",
     "watch-css": "onchange 'src/styles/*/*.scss' -- npm run build-css",
@@ -31,6 +31,10 @@
     "onchange": "^3.2.1",
     "parallelshell": "^3.0.2",
     "postcss-cli": "^4.1.1",
+    "stickybits": "^2.0.10",
     "uglify-js": "^3.1.4"
+  },
+  "dependencies": {
+    "stickybits": "^2.0.10"
   }
 }

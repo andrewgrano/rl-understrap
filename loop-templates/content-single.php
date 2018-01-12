@@ -7,30 +7,17 @@
 
 ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-	<div class="headerWindow">
-		<div id="js-parallax-window" class="parallax-window">
-		<div class="parallax-static-content">
-			<h1>
-				<?php understrap_entry_categories2(); ?>
-			</h1>
-		</div>
-		<div id="js-parallax-background" class="parallax-background" style="height:200px; background-image: url(<?php the_post_thumbnail_url(); ?>)">
-		</div>
-		</div>
-	</div>
-	<!-- <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>  -->
 
-	<hr class="hr--primary">
 
 	<?php the_title( '<h1 class="post__title">', '</h1>' ); ?>
 
 	<div class="post__meta">
 
 		<?php understrap_posted_on(); ?>
-		<?php understrap_entry_categories(); ?>
-
 
 	</div><!-- .entry-meta -->
+
+	<?php understrap_entry_categories(); ?>
 
 
 

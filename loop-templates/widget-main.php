@@ -4,14 +4,18 @@
  *
  * @package understrap
  */
-
 ?>
 
 <div <?php post_class('postWidget'); ?> id="post-<?php the_ID(); ?>">
 
     <a href="<?php the_permalink(); ?>">
         <div class="postWidget__img">
-            <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+            <?php
+            $potentialImgHostPaths = array("https://www.adminroaminglove.com/wp-content/uploads/", "https://adminroaminglove.com/wp-content/uploads/", "https://www.roaminglove.com/wp-content/uploads/", "http://127.0.0.1:7000/wp-content/uploads/");
+            $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "size" );
+            $imgsrc = str_replace($potentialImgHostPaths,'https://roaminglove.imgix.net/', $thumbnail[0]);
+            ?>
+            <img src="<?php echo $imgsrc ?>?w=370&h=250&fit=crop&crop=entropy&auto=compress,format">
         </div>
 
         <div class="postWidget__content">
@@ -26,7 +30,10 @@
                             <?php understrap_posted_by(); ?>
                         </div><!-- .entry-meta -->
 
-                    <?php endif; ?>
+                    <?php endif
+
+
+                    ; ?>
                 </div>
             </div>
 

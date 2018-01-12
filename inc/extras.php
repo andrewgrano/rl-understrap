@@ -125,8 +125,8 @@ if ( ! function_exists( 'understrap_post_recommended' ) ) :
 		?>
 
 			<div class="postRecommend">
-				<h3>More Stories About <?php echo substr($parentscategory,0,-2);; ?></h3>
-				<div class="row">
+				<h3 class="pageHeading">More Stories About <?php echo substr($parentscategory,0,-2);; ?></h3>
+				<div class="row no-gutters">
 
 					<?php
 					// this code came from http://www.wpbeginner.com/wp-themes/how-to-add-related-posts-with-a-thumbnail-without-using-plugins/

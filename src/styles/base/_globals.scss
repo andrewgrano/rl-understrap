@@ -16,8 +16,26 @@ body {
 a,
 a:visited {
     color: $black;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $secondary-color;
+    }
 }
 
+.pageHeading {
+    font-family: $displayFont;
+    font-size: 34px;
+    margin: 0 0 1em 0;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.hr--primary {
+    height: 7px;
+    background: $primary-color;
+}
 
 /* Underline From Center */
 .linkOverline {

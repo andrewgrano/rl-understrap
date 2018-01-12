@@ -98,11 +98,13 @@
 
         li {
             display: inline-block;
-            margin-right: 10px;
             // color: #575757;
             color: $secondary-color;
             font-size: 12px;
             position: relative;
+            margin: 0 10px 0 0;
+            padding: 0;
+            overflow: visible;
 
             &:after {
                 content: " ";

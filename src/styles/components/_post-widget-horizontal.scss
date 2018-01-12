@@ -9,11 +9,6 @@
     border-top: 6px solid $secondary-color;
     background: #fefefe;
 
-    &:nth-child(odd) {
-        margin-right: 0;
-        margin-left: 2.5%;
-    }
-
     @media screen and (max-width: 479px) {
         border: 0 none;
         box-shadow: none;
@@ -110,7 +105,7 @@
                 width: 1px;
                 height: 14px;
                 position: absolute;
-                right: -8px;
+                right: -6px;
                 bottom: 1px;
                 background: $secondary-color;
             }

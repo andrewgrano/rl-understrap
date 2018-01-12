@@ -15,8 +15,11 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 <main class="main" role="main">
 
+
+
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
+		<hr class="hr--primary">
 
 		<?php
 		$curauth = ( isset( $_GET['author_name'] ) ) ? get_user_by( 'slug',

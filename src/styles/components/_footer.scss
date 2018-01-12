@@ -5,44 +5,52 @@
     hr {
         background: $primary-color;
         height: 7px;
+        margin-top: 2em;
     }
 
     .footerMain {
-        background: $dark-gray;
-        background-image: url(//roaminglove.imgix.net/2017/05/footer-bg-logo.png);
-        background-position: 305px 80px;
-        background-repeat: no-repeat;
-        color: $white;
-        margin-top: 20px;
-        padding: 50px 15px;
+        padding: 35px 0 25px 0;
     }
 
-    &__summary {
-        font-weight: 100;
-        font-size: 16px;
-        text-align: right;
-        margin-top: 4px;
-        position: relative;
-    }
+    .footerAbout {
+        background: $light-gray;
+        color: $dark-gray;
+        padding: 30px 25px;
 
-    &__newsletter {
-        .formNewsletter {
-            &__title {
-                width: 320px;
-                float: left;
-                margin-bottom: 5px;
-                padding-right: 5px;
-                border-bottom: 1px solid;
+        &Section {
+            margin-bottom: 65px;
+        }
+
+        &__heading {
+            margin: 25px 0;
+            padding-bottom: 10px;
+            font-weight: 700;
+            line-height: 1.4;
+            border-bottom: 7px solid $primary-color;
+        }
+
+        .footerAboutSection--contribute {
+            .btn {
+                margin-top: 20px;
             }
         }
+
+        .footerAboutSection--newsletter {
+            margin-bottom: 0;
+        }
+
+
+
     }
 
     &__links {
+        text-align: center;
+        margin-bottom: 25px;
+
         ul {
             margin: 0 0 0 40px;
             padding: 0;
             list-style: none;
-            float: right;
 
             &:last-child {
                 margin-right: 0;
@@ -50,26 +58,124 @@
 
             li {
                 margin-bottom: 7px;
+                margin-right: 4%;
+                display: inline;
 
                 a {
                     text-decoration: none;
                     text-transform: lowercase;
                     font-family: $displayFont;
                     font-size: 20px;
-                    color: $primary-color;
+                    color: $black;
                 }
             }
         }
     }
 
     .instagramLink {
-        margin-top: 20px;
         float: none;
         display: block;
-        max-width: 250px;
+        width: 250px;
+        margin-right: auto;
         margin-left: auto;
         text-align: center;
     }
+
+
+    // &__summary {
+    //     font-weight: 100;
+    //     font-size: 16px;
+    //     text-align: right;
+    //     margin-top: 4px;
+    //     position: relative;
+    // }
+
+    // &__newsletter {
+    //     .formNewsletter {
+    //         &__title {
+    //             width: 320px;
+    //             float: left;
+    //             margin-bottom: 5px;
+    //             padding-right: 5px;
+    //             border-bottom: 1px solid;
+    //         }
+    //     }
+    // }
+
+
 }
 
 
+.polaroidWrapper {
+    margin-top: 40px;
+    margin-bottom: 80px;
+    text-align: center;
+
+    & > div {
+        background: #FAFAF8;
+        display: inline-block;
+        margin: 0;
+        padding: 10px 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,.3);
+        @include transition(all .15s linear);
+        z-index:0;
+        position:relative;
+
+        @include media-breakpoint-down(sm) {
+            width: 49%;
+            max-width: 220px;
+        }
+
+        &:first-child {
+            transform: rotate(-8deg);
+        }
+
+        &:nth-child(2) {
+            transform: rotate(5deg);
+            z-index: 3;
+            margin-left: -5px;
+
+            @include media-breakpoint-down(lg) {
+                display: none;
+            }
+        }
+
+        &:nth-child(3n) {
+            transform: rotate(-2deg);
+        }
+
+        &:nth-child(4n) {
+            transform: rotate(-9deg);
+            margin-left: -5px;
+
+            @include media-breakpoint-down(sm) {
+                margin-left: 0;
+            }
+        }
+
+        &:nth-child(5n) {
+            transform: rotate(8deg);
+        }
+
+        // &:hover {
+        //     transform: rotate(0deg);
+        //     transform: scale(1.2));            //     z-index:10;
+        //     box-shadow: 0 10px 20px rgba(0,0,0,.7);
+        // }
+
+        img {
+            display: block;
+            width: inherit;
+
+            @media screen and (max-width: 945px) {
+                width: 155px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+        }
+    }
+}

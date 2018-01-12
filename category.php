@@ -21,8 +21,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
         <div class="row">
             <div class="col-sm-12">
-
                 <div class="breadcrumbs">
+                    <a href="/destinations">Destinations</a> <span>&raquo;</span>
                     <?php
                         echo get_category_parents( $cat, true, ' <span>&raquo;</span> ' );
                     ?>
@@ -32,10 +32,15 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                 <?php if ( have_posts() ) : ?>
 
                     <header class="page-header">
+
                         <?php
-                        the_archive_title( '<h1 class="page-title">', '</h1>' );
-                        the_archive_description( '<img src="', '">' );
+                        $potentialImgHostPaths = array("https://www.adminroaminglove.com/wp-content/uploads/", "https://adminroaminglove.com/wp-content/uploads/", "https://www.roaminglove.com/wp-content/uploads/", "http://127.0.0.1:7000/wp-content/uploads/");
+                        $ogImgSrc = get_the_archive_description( '<img src="', '">' );
+                        $imgsrc = str_replace($potentialImgHostPaths,'https://roaminglove.imgix.net/', $ogImgSrc);
                         ?>
+                        <h1 class="pageHeading"> All <?php echo get_the_archive_title( ) ?> Stories</h1>
+                       <!--  <img src="<?php echo $imgsrc ?>?w=1200&h=400&fit=crop&crop=entropy"> -->
+
                     </header><!-- .page-header -->
                     <div class="row">
                         <?php /* Start the Loop */ ?>
@@ -74,7 +79,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                  ?>
 
 
-                <hr>
+                <hr class="hr--primary">
                 <div class="more">
                     <?php
                         function get_level($category, $level = 0)
@@ -96,7 +101,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
                             if ( get_level($yourcat) == 0 ) {
                     ?>
-                        <div> Destinations in <?php the_archive_title()?> </div>
+                        <h1 class="pageHeading"> Destinations in <?php the_archive_title()?> </h1>
 
 
                        <div class="row">
@@ -111,7 +116,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                                 foreach ( $children as $child ) {
                                     $category_link = get_category_link( $child );
                             ?>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <?php
                                         include 'loop-templates/category-widget.php';
                                     ?>
@@ -142,7 +147,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                             $topParentId = get_cat_ID( $topParentName )
                         ?>
 
-                        <div> Other Destinations In <?php echo $topParentName ?> </div>
+                        <h1 class="pageHeading"> Other Destinations In <?php echo $topParentName ?> </h1>
 
                         <div class="row">
                             <?php
@@ -160,7 +165,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 
                             ?>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <?php
                                         include 'loop-templates/category-widget.php';
                                     ?>

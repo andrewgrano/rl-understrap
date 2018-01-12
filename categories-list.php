@@ -16,13 +16,13 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 ?>
 
 
-<main class="main" role="main">
+<main class="main destinations" role="main">
 
         <div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
             <div class="row">
                 <div class="col-sm-4">
-                    <div class="sidebar">
+                    <nav class="destinations__sidebar navbar" id="destinations__sidebar">
                         <?php
 
                             $parents = get_categories( array(
@@ -32,9 +32,9 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
                             foreach ( $parents as $parent ) {
                         ?>
-                            <div>
-                                <h2><?php echo $parent->name; ?></h2>
-                               <ul class="models">
+                            <nav class="nav">
+                                <a class="nav-link" href="#<?php echo str_replace(" ", "-",$parent->name) ?>"><?php echo $parent->name; ?></a>
+                               <ul class="" id="">
                                     <?php wp_list_categories(
                                         array(
                                             'hierarchical' => false,
@@ -42,13 +42,13 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                                             'title_li' => ''
                                         ));
                                     ?>
-                                    <li>View All <?php echo $parent->name; ?> Stories</li>
+                                    <li><a href="<?php echo esc_url( get_category_link( $parent ) ); ?>">All <?php echo $parent->name; ?> Stories</a></li>
                                 </ul>
-                            </div>
+                            </nav>
                         <?php
                             }
                         ?>
-                    </div>
+                    </nav>
                 </div>
                 <div class="col-sm-8">
                         <?php
@@ -60,14 +60,30 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                             foreach ( $parents as $parent ) {
                                 $category_link = get_category_link( $parent );
                         ?>
-                            <div>
-                                <h2><?php echo $parent->name; ?></h2>
-                                <div>Post Count:<?php echo $parent->count; ?></div>
-                                <a href="<?php echo esc_url( $category_link ); ?>">
-                                    View all <?php echo $parent->name; ?> Stories
-                                </a>
+                            <div id="<?php echo str_replace(" ", "-",$parent->name) ?>" class="destinations__country">
+                                <div class="destinations__header parallax-window">
+                                    <div class="parallax-static-content">
+                                        <h2><?php echo $parent->name; ?></h2>
 
-                                <img src="<?php echo $parent->description; ?>">
+                                        <a href="<?php echo esc_url( $category_link ); ?>">
+                                            View All <?php echo $parent->name; ?> Stories &raquo;
+
+                                           <!--  Stories Count: <?php echo $parent->count; ?> -->
+                                        </a>
+                                    </div>
+
+
+                                    <?php
+                                        $potentialImgHostPaths = array("https://www.adminroaminglove.com/wp-content/uploads/", "https://adminroaminglove.com/wp-content/uploads/", "https://www.roaminglove.com/wp-content/uploads/", "http://127.0.0.1:7000/wp-content/uploads/");
+                                        $ogImgSrc = $parent->description;
+                                        $imgsrc = str_replace($potentialImgHostPaths,'https://roaminglove.imgix.net/', $ogImgSrc);
+                                    ?>
+
+                                    <div class="parallax-background" style="background-image:url(<?php echo $imgsrc ?>?w=788&h=400&fit=crop&crop=focalpoint&auto=compress,format)">
+                                    </div>
+                                </div>
+
+                               <!-- <div class="pageHeading">Destinations in <?php echo $parent->name; ?></div> -->
 
                                 <div class="row">
 
@@ -93,11 +109,17 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                                     ?>
 
                                     <div class="col-sm-4">
-                                        <a href="<?php echo esc_url( $category_link ); ?>">
-                                            <h2>View all <?php echo $parent->name; ?> Stories</h2>
-                                            <div>Post Count:<?php echo $parent->count; ?></div>
-                                            <img src="<?php echo $parent->description; ?>">
+                                        <a class="locationWidget" href="<?php echo esc_url( $category_link ); ?>">
 
+                                            <?php
+                                                $potentialImgHostPaths = array("https://www.adminroaminglove.com/wp-content/uploads/", "https://adminroaminglove.com/wp-content/uploads/", "https://www.roaminglove.com/wp-content/uploads/", "http://127.0.0.1:7000/wp-content/uploads/");
+                                                $ogImgSrc = $parent->description;
+                                                $imgsrc = str_replace($potentialImgHostPaths,'https://roaminglove.imgix.net/', $ogImgSrc);
+                                            ?>
+
+                                            <img src="<?php echo $imgsrc ?>?w=249&h=249&fit=crop&crop=entropy&auto=compress,format">
+                                            <h6><div><span>All <?php echo $parent->name; ?> Stories</span></div></h6>
+                                            <!-- <div>Post Count:<?php echo $parent->count; ?></div> -->
                                         </a>
                                     </div>
                                 </div>
@@ -110,5 +132,4 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
         </div>
     </div>
 </main>
-
 <?php get_footer(); ?>
