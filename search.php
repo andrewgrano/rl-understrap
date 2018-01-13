@@ -11,66 +11,62 @@ $container   = get_theme_mod( 'understrap_container_type' );
 $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 ?>
 
-<div class="wrapper" id="search-wrapper">
+<main class="main" role="main">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
+		<hr class="hr--primary">
+
 		<div class="row">
 
-			<!-- Do the left sidebar check and opens the primary div -->
-			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
+			<?php if ( have_posts() ) : ?>
 
-			<main class="site-main" id="main">
+					<div class="col-sm-12">
+						<h1 class="pageHeading"><?php printf(
+						/* translators:*/
+						 esc_html__( 'Search Results for: %s', 'understrap' ),
+							'<span>' . get_search_query() . '</span>' ); ?></h1>
+					</div>
 
-				<?php if ( have_posts() ) : ?>
-
-					<header class="page-header">
-						
-							<h1 class="page-title"><?php printf(
-							/* translators:*/
-							 esc_html__( 'Search Results for: %s', 'understrap' ),
-								'<span>' . get_search_query() . '</span>' ); ?></h1>
-
-					</header><!-- .page-header -->
-
-					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
-
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+					<div class="col-sm-4">
 						<?php
 						/**
 						 * Run the loop for the search to output the results.
 						 * If you want to overload this in a child theme then include a file
 						 * called content-search.php and that will be used instead.
 						 */
-						get_template_part( 'loop-templates/content', 'search' );
+						get_template_part( 'loop-templates/widget-main', 'search' );
 						?>
+					</div>
+				<?php endwhile; ?>
 
-					<?php endwhile; ?>
+			<?php else : ?>
 
-				<?php else : ?>
+				<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
-					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+			<?php endif; ?>
 
-				<?php endif; ?>
 
-			</main><!-- #main -->
+		</div><!-- .row -->
 
-			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
+        <?php
 
-		</div><!-- #primary -->
+        	$queryObject = get_search_query();
 
-		<!-- Do the right sidebar check -->
-		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
+			if($wp_query->found_posts > 9 ) {
 
-			<?php get_sidebar( 'right' ); ?>
+			   echo do_shortcode('[ajax_load_more search="'.$queryObject.'" container_type="div" post_type="post" posts_per_page="9" offset="9" pause="true" scroll="false" transition="fade" button_label="More Stories with Keyword: '.$queryObject.'" button_loading_label="Loading..." transition_container="false" css_classes="row"]');
+			}
+         ?>
 
-		<?php endif; ?>
+		<!-- The pagination component
+		<?php understrap_pagination(); ?> -->
 
-	</div><!-- .row -->
 
-</div><!-- Container end -->
+	</div><!-- Container end -->
 
-</div><!-- Wrapper end -->
+</main><!-- Wrapper end -->
 
 <?php get_footer(); ?>

@@ -104,3 +104,14 @@ if ( $query->is_archive() && $query->is_main_query() && !is_admin() ) {
     }
 }
 add_action( 'pre_get_posts', 'wpsites_query' );
+
+
+/* =custom -- change the number of search results initially displayed (on the search-results page)
+------------------------------------------------- */
+
+function change_wp_search_size($queryVars) {
+    if ( isset($_REQUEST['s']) ) // Make sure it is a search page
+        $queryVars['posts_per_page'] = 9; // Change 10 to the number of posts you would like to show
+    return $queryVars; // Return our modified query variables
+}
+add_filter('request', 'change_wp_search_size'); // Hook our custom function onto the request filter
