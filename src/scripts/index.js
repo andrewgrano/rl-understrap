@@ -13,7 +13,11 @@ function equalizeHeights(selector) {
 
     // Set all heights to max height
     $(".featureWidgetHead").each(function() {
-        $(this).css('height', max + 'px');
+        if ($(window).width() > 575) {
+            $(this).css('height', max + 'px');
+        } else {
+            $(this).css('height','');
+        }
     });
 
 
@@ -29,7 +33,11 @@ function equalizeHeights(selector) {
 
     // Set all heights to max height
     $(".featureWidget__desc").each(function() {
-        $(this).css('height', max + 'px');
+        if ($(window).width() > 575) {
+            $(this).css('height', max + 'px');
+        } else {
+            $(this).css('height','');
+        }
     });
 }
 
@@ -45,7 +53,6 @@ $( document ).ready(function() {
         autoplay:true
     });
 
-
     equalizeHeights();
 
     //resize function from stackoverflow.com/questions/2854407/javascript-jquery-window-resize-how-to-fire-after-the-resize-is-completed#answer-2854467
@@ -59,8 +66,8 @@ $( document ).ready(function() {
 
     $(window).resize(function() {
         delay(function(){
-          console.log('resized');
-          equalizeHeights();
+            console.log('resized');
+            equalizeHeights();
         }, 500);
     });
 

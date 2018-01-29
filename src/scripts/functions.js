@@ -21,6 +21,7 @@ closeSearchBar = function() {
 };
 
 $(document).ready(function() {
+    //parallax window functionality, used on most pages
     var distanceHeadertoScreenTop, headerContent, headerImg, headerTitle;
     if ($('#js-parallax-window').length) {
       parallax();
@@ -32,8 +33,8 @@ $(document).ready(function() {
       }
     });
 
+    //header search bar functionality
     $(".headerSearch").on("click",function(){
-      console.log("you clicked it");
       $(".searchBar,.searchBar--overlay").fadeIn();
       $(".searchBar__input").focus();
       $("body").addClass("searchBar--active");
@@ -50,4 +51,12 @@ $(document).ready(function() {
       }
     }
   });
+
+
+  //scroll to "about" section on-click of "about"
+  $(".js-scrollToAbout").on("click",function(e){
+      $("html, body").animate({ scrollTop: $('.footerAbout').offset().top -50 }, 800);
+      e.preventDefault();
+  });
+
 });

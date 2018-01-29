@@ -2,28 +2,29 @@
 .indexHeader {
     margin-bottom: 40px;
 
-    @media screen and (max-width: 479px) {
-        border-top: 7px solid $primary-color;
-        margin-bottom: 30px;
-    }
+    // @include media-breakpoint-down(xs) {
+    //     border-top: 7px solid $primary-color;
+    //     margin-bottom: 30px;
+    // }
 
     .owl-carousel.owl-theme {
-        @media screen and (max-width: 479px) {
-            display: none;
-        }
 
         .owl-item {
             // width: 1110px;
             height: 389px;
             position: relative;
 
-            // @media screen and (max-width: 1199px) {
-            //     height: 331px;
-            // }
+            @include media-breakpoint-down(lg) {
+                height: 326px;
+            }
 
-            // @media screen and (max-width: 767px) {
-            //     height: 252px;
-            // }
+            @include media-breakpoint-down(md) {
+                height: 242px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                height: auto;
+            }
 
             .itemLink {
                 position: absolute;
@@ -32,6 +33,10 @@
                 width: 100%;
                 height: 100%;
                 z-index: 10;
+
+                @include media-breakpoint-down(sm) {
+                    position: static;
+                }
 
                 &:before {
                     content: " ";
@@ -48,18 +53,9 @@
                     top: 0;
                     left: 0;
 
-                    // @media screen and (max-width: 1199px) {
-                    //     width: 942px;
-                    // }
-
-                    // @media screen and (max-width: 991px) {
-                    //    height: 331px;
-                    //    width: auto;
-                    // }
-
-                    // @media screen and (max-width: 767px) {
-                    //     height: 252px;
-                    // }
+                    @include media-breakpoint-down(sm) {
+                        position: static;
+                    }
                 }
 
                 .itemContent {
@@ -74,27 +70,36 @@
                     color: #fff;
                     padding: 22px 20px 37px 20px;
 
+                    @include media-breakpoint-down(sm) {
+                        position: static;
+                        background: $dark-gray;
+                    }
 
-
-                    // @media screen and (max-width: 767px) {
-
-                    // }
-
-                    h4 {
-                        margin: 0;
+                    h3 {
+                        margin: 0 0 5px 0;
                         font-size: 28px;
                         font-weight: 700;
 
-                        // @media screen and (max-width: 767px) {
-                        //     font-size: 24px;
-                        // }
+                        @include media-breakpoint-down(sm) {
+                            font-size: 24px;
+                        }
+
+                        @include media-breakpoint-down(xs) {
+                            font-size: 20px;
+                        }
                     }
 
                     p {
                         margin: 0;
-                            // @media screen and (max-width: 767px) {
-                            //     font-size: 16px;
-                            // }
+                        line-height: 1.5;
+
+                        @include media-breakpoint-down(sm) {
+                            font-size: 16px;
+                        }
+
+                        @include media-breakpoint-down(xs) {
+                            font-size: 14px;
+                        }
                     }
                 }
             }
@@ -117,6 +122,9 @@
             top: -13px;
             margin-top: -20px;
 
+            @include media-breakpoint-down(sm) {
+                background: $dark-gray;
+            }
 
             .owl-dot {
                 span {

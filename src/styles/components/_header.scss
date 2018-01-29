@@ -1,6 +1,28 @@
 .header {
     padding-top: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
+
+    .navbar {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .navbar-toggler {
+        box-shadow: none;
+
+        .navbar-toggler-line {
+            width: 35px;
+            height: 4px;
+            background: $black;
+            border-radius: 5px;
+            display: block;
+            margin-bottom: 6px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
 
     &Search {
         width: 32px;
@@ -9,27 +31,84 @@
         top: 8px;
         cursor: pointer;
 
+        @include media-breakpoint-down(md) {
+            width: 28px;
+            height: 28px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            top: 0;
+            margin-left: auto;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 359px) {
+            margin-right: 0;
+        }
+
         svg {
             width: 100%;
             height: 100%;
         }
     }
 
+
+
     &__logo {
+
+        @include media-breakpoint-down(xs) {
+            margin-right: 0;
+        }
+
+        @include media-breakpoint-down(lg) {
+            margin-top: 8px;
+        }
+
+        @media (max-width: 359px) {
+            margin-top: 0;
+        }
+
         img {
-            width: 360px;
+            width: 500px;
+
+            @include media-breakpoint-down(md) {
+                width: 400px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                width: 300px;
+            }
+
+            @include media-breakpoint-down(xs) {
+                width: 195px;
+            }
+
+            @media (max-width: 359px) {
+                width: 180px;
+            }
         }
     }
 
     &__nav {
+        width: 100%;
         text-align: right;
-        margin-top: 40px;
+        margin-top: 15px;
 
         & > ul {
             margin: 0;
+
             li {
                 display: inline-block;
                 margin-right: 25px;
+
+                @include media-breakpoint-down(md) {
+                    margin-right: 18px;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    display: block;
+                    margin-right: 0;
+                }
 
                 &:last-child {
                     margin-right: 0;
@@ -39,6 +118,18 @@
                     color: $black;
                     font-size: 23px;
                     text-decoration: none;
+
+                    @include media-breakpoint-down(lg) {
+                        font-size: 22px;
+                    }
+
+                    @include media-breakpoint-down(md) {
+                        font-size: 20px;
+                    }
+
+                    @include media-breakpoint-down(sm) {
+                        display: block;
+                    }
                 }
             }
         }
@@ -47,63 +138,10 @@
     .instagramLink {
         border-radius: 0 0 11px 11px;
         position: absolute;
-        right: 0px;
+        right: 20px;
         top: -20px;
     }
 
-}
-
-.searchBar--overlay {
-    display: none;
-    position: absolute;
-    z-index: 99994;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-}
-
-.searchBar {
-    display: none;
-    position: absolute;
-    z-index: 99995;
-    width: 100%;
-    top: 115px;
-    left: 0;
-
-
-}
-
-.searchBox {
-    background: $light-gray;
-    padding: 30px 25px;
-
-    &__label {
-        display: block;
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
-}
-
-.searchBar,
-.searchBox {
-    &__input[type="text"] {
-        height: 40px;
-        padding: 3px 15px;
-        width: 80%;
-        border-radius: 8px 0 0 8px;
-        font-size: 18px;
-    }
-
-    &__btn {
-        border-radius: 0 8px 8px 0;
-        height: 40px;
-        width: 20%;
-        margin-left: -6px;
-        position: relative;
-        top: -2px;
-    }
 }
 
 

@@ -2,9 +2,9 @@
 .featureWidgetWrapper {
     margin-bottom: 75px;
 
-    @media screen and (max-width: 479px) {
-        display: none;
-    }
+    // @media screen and (max-width: 479px) {
+    //     display: none;
+    // }
 }
 
 .featureWidget {
@@ -61,7 +61,12 @@
     &__desc {
         font-size: 16px;
         text-align: left;
+        margin-bottom: 5px;
 
+        @include media-breakpoint-down(xs) {
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
     }
 
     .btnSecondary {

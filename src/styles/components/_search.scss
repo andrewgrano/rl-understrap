@@ -37,6 +37,11 @@
         width: 80%;
         border-radius: 8px 0 0 8px;
         font-size: 18px;
+
+        @include media-breakpoint-down(xs) {
+            width: 70%;
+        }
+
     }
 
     &__btn {
@@ -46,5 +51,9 @@
         margin-left: -6px;
         position: relative;
         top: -2px;
+
+        @include media-breakpoint-down(xs) {
+            width: 30%;
+        }
     }
 }

@@ -79,11 +79,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="col-sm-12">
 					<div class="footer__links">
 						<ul>
-							<li><a href="">home</a></li>
+							<li><a href="/">home</a></li>
 							<li><a href="">contribute</a></li>
-							<li><a href="">about</a></li>
+							<li><a href="" class="js-scrollToAbout">about</a></li>
 							<li><a href="">contact</a></li>
-							<li><a href="">destinations</a></li>
+							<li><a href="/destinations">destinations</a></li>
 						</ul>
 					</div>
 
