@@ -44,7 +44,9 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 			<?php else : ?>
 
-				<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+				<div class="col-sm-12">
+					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+				</div>
 
 			<?php endif; ?>
 

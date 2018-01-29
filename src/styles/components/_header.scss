@@ -2,6 +2,19 @@
     padding-top: 20px;
     margin-bottom: 25px;
 
+    &Search {
+        width: 32px;
+        height: 32px;
+        position: relative;
+        top: 8px;
+        cursor: pointer;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
     &__logo {
         img {
             width: 360px;
@@ -39,4 +52,58 @@
     }
 
 }
+
+.searchBar--overlay {
+    display: none;
+    position: absolute;
+    z-index: 99994;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+
+.searchBar {
+    display: none;
+    position: absolute;
+    z-index: 99995;
+    width: 100%;
+    top: 115px;
+    left: 0;
+
+
+}
+
+.searchBox {
+    background: $light-gray;
+    padding: 30px 25px;
+
+    &__label {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+}
+
+.searchBar,
+.searchBox {
+    &__input[type="text"] {
+        height: 40px;
+        padding: 3px 15px;
+        width: 80%;
+        border-radius: 8px 0 0 8px;
+        font-size: 18px;
+    }
+
+    &__btn {
+        border-radius: 0 8px 8px 0;
+        height: 40px;
+        width: 20%;
+        margin-left: -6px;
+        position: relative;
+        top: -2px;
+    }
+}
+
 

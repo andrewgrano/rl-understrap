@@ -15,6 +15,11 @@ parallax = function() {
     }
 };
 
+closeSearchBar = function() {
+    $(".searchBar,.searchBar--overlay").fadeOut();
+    $("body").removeClass("searchBar--active");
+};
+
 $(document).ready(function() {
     var distanceHeadertoScreenTop, headerContent, headerImg, headerTitle;
     if ($('#js-parallax-window').length) {
@@ -26,4 +31,23 @@ $(document).ready(function() {
         parallax();
       }
     });
+
+    $(".headerSearch").on("click",function(){
+      console.log("you clicked it");
+      $(".searchBar,.searchBar--overlay").fadeIn();
+      $(".searchBar__input").focus();
+      $("body").addClass("searchBar--active");
+    });
+
+    $(".searchBar--overlay").on("click",function(){
+      closeSearchBar();
+    });
+
+  $(document).keyup(function(e) {
+    if ( $("body").hasClass("searchBar--active") ) {
+      if (e.keyCode === 27) { // esc
+        closeSearchBar();
+      }
+    }
+  });
 });
