@@ -17,7 +17,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 		<hr class="hr--primary">
 
-		<div class="row">
+		<div class="row justify-content-md-center">
 
 			<?php if ( have_posts() ) : ?>
 
@@ -30,7 +30,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-					<div class="col-sm-4">
+					<div class="col-lg-4 col-md-6">
 						<?php
 						/**
 						 * Run the loop for the search to output the results.

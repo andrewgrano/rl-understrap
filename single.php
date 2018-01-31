@@ -38,7 +38,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 
 			<div class="row justify-content-md-center">
-				<div class="col-sm-9">
+				<div class="col-lg-9 col-md-10">
 
 					<?php while ( have_posts() ) : the_post(); ?>
 

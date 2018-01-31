@@ -42,10 +42,10 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                        <!--  <img src="<?php echo $imgsrc ?>?w=1200&h=400&fit=crop&crop=entropy"> -->
 
                     </header><!-- .page-header -->
-                    <div class="row">
+                    <div class="row justify-content-md-center">
                         <?php /* Start the Loop */ ?>
                         <?php while ( have_posts() ) : the_post(); ?>
-                            <div class="col-sm-4">
+                            <div class="col-lg-4 col-md-6">
                                 <?php
 
                                 /*
@@ -116,7 +116,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                                 foreach ( $children as $child ) {
                                     $category_link = get_category_link( $child );
                             ?>
-                                <div class="col-sm-3">
+                                <div class="col-lg-3 col-md-4 col-sm-6">
                                     <?php
                                         include 'loop-templates/category-widget.php';
                                     ?>
@@ -165,7 +165,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 
                             ?>
-                                <div class="col-sm-3">
+                                <div class="col-lg-3 col-md-4 col-sm-6">
                                     <?php
                                         include 'loop-templates/category-widget.php';
                                     ?>

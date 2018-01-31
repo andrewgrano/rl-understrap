@@ -148,7 +148,7 @@ if ( ! function_exists( 'understrap_post_recommended' ) ) :
 							while( $my_query->have_posts() ) {
 								$my_query->the_post();
 								?>
-								<div class="col-sm-6">
+								<div class="col-md-6">
 									<?php get_template_part( 'loop-templates/widget-horizontal', get_post_format() ); ?>
 								</div>
 								<?

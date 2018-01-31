@@ -6,6 +6,12 @@
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
     border-top: 6px solid $secondary-color;
     background: #fefefe;
+    max-width: 361px;
+
+    @include media-breakpoint-down(sm) {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     a {
         color: $black;
@@ -13,8 +19,8 @@
 
     &:hover .postWidget__img img {
         max-width: 110%;
-        margin-left: -5%;
-        margin-top: -10%;
+        margin-left: -1%;
+        margin-top: -4%;
     }
 
     &:hover .postWidget__img:before {
@@ -35,6 +41,14 @@
         position: relative;
         overflow: hidden;
         margin: 0;
+
+        @include media-breakpoint-down(lg) {
+            height: 190px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            height: 175px;
+        }
 
         &:before {
             content: " ";

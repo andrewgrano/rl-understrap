@@ -49,12 +49,12 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 
 
-		<div class="row">
+		<div class="row justify-content-md-center">
 
 			<!-- The Loop -->
 			<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-					<div class="col-sm-4">
+					<div class="col-lg-4 col-md-6">
 						<?php get_template_part( 'loop-templates/widget-main', get_post_format() ); ?>
 					</div>
 				<?php endwhile; ?>

@@ -115,3 +115,10 @@ function change_wp_search_size($queryVars) {
     return $queryVars; // Return our modified query variables
 }
 add_filter('request', 'change_wp_search_size'); // Hook our custom function onto the request filter
+
+
+
+/* =custom -- remove the wordpress admin toolbar from top of site
+------------------------------------------------- */
+
+show_admin_bar(false);

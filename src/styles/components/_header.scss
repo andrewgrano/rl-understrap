@@ -2,6 +2,10 @@
     padding-top: 20px;
     margin-bottom: 15px;
 
+    @include media-breakpoint-down(xs) {
+        padding-top: 0;
+    }
+
     .navbar {
         padding-left: 0;
         padding-right: 0;
@@ -69,10 +73,14 @@
         }
 
         img {
-            width: 500px;
+            width: 400px;
+
+            @include media-breakpoint-down(lg) {
+                width: 360px;
+            }
 
             @include media-breakpoint-down(md) {
-                width: 400px;
+                width: 270px;
             }
 
             @include media-breakpoint-down(sm) {

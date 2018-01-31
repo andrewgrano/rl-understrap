@@ -21,7 +21,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
         <div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-md-4 d-none d-md-block">
                     <nav class="destinations__sidebar navbar" id="destinations__sidebar">
                         <?php
 
@@ -50,7 +50,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                         ?>
                     </nav>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-md-8">
                         <?php
                             $parents = get_categories( array(
                                 'orderby' => 'name',
@@ -61,7 +61,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                                 $category_link = get_category_link( $parent );
                         ?>
                             <div id="<?php echo str_replace(" ", "-",$parent->name) ?>" class="destinations__country">
-                                <div class="destinations__header parallax-window">
+                                <div class="destinations__header parallax-window d-none d-md-block">
                                     <div class="parallax-static-content">
                                         <h2><?php echo $parent->name; ?></h2>
 
@@ -83,44 +83,50 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
                                     </div>
                                 </div>
 
+                                <div class="destinations__headerMobile d-block d-md-none" data-toggle="collapse" href="#collapse--<?php echo str_replace(" ", "-", $parent->name); ?>">
+                                    <span><?php echo $parent->name; ?></span>
+                                </div>
+
                                <!-- <div class="pageHeading">Destinations in <?php echo $parent->name; ?></div> -->
 
-                                <div class="row">
+                               <div class="destinations__widgetWraper collapse show" id="collapse--<?php echo str_replace(" ", "-", $parent->name); ?>">
+                                    <div class="row">
 
-                                    <?php
-                                        $children = get_categories( array(
-                                            'orderby' => 'name',
-                                            'child_of' => $parent->term_id,
-                                        ) );
-
-                                        foreach ( $children as $child ) {
-                                            $category_link = get_category_link( $child );
-
-                                    ?>
-
-                                    <div class="col-sm-4">
                                         <?php
-                                            include 'loop-templates/category-widget.php';
+                                            $children = get_categories( array(
+                                                'orderby' => 'name',
+                                                'child_of' => $parent->term_id,
+                                            ) );
+
+                                            foreach ( $children as $child ) {
+                                                $category_link = get_category_link( $child );
+
                                         ?>
-                                    </div>
 
-                                    <?php
-                                        }
-                                    ?>
-
-                                    <div class="col-sm-4">
-                                        <a class="locationWidget" href="<?php echo esc_url( $category_link ); ?>">
-
+                                        <div class="col-md-4 col-sm-6 px-2 px-sm-3 px-md-1 px-lg-3">
                                             <?php
-                                                $potentialImgHostPaths = array("https://www.adminroaminglove.com/wp-content/uploads/", "https://adminroaminglove.com/wp-content/uploads/", "https://www.roaminglove.com/wp-content/uploads/", "http://127.0.0.1:7000/wp-content/uploads/");
-                                                $ogImgSrc = $parent->description;
-                                                $imgsrc = str_replace($potentialImgHostPaths,'https://roaminglove.imgix.net/', $ogImgSrc);
+                                                include 'loop-templates/category-widget.php';
                                             ?>
+                                        </div>
 
-                                            <img src="<?php echo $imgsrc ?>?w=249&h=249&fit=crop&crop=entropy&auto=compress,format">
-                                            <h6><div><span>All <?php echo $parent->name; ?> Stories</span></div></h6>
-                                            <!-- <div>Post Count:<?php echo $parent->count; ?></div> -->
-                                        </a>
+                                        <?php
+                                            }
+                                        ?>
+
+                                        <div class="col-md-4 col-sm-6 px-2 px-sm-3 px-md-1 px-lg-3">
+                                            <a class="locationWidget" href="<?php echo esc_url( $category_link ); ?>">
+
+                                                <?php
+                                                    $potentialImgHostPaths = array("https://www.adminroaminglove.com/wp-content/uploads/", "https://adminroaminglove.com/wp-content/uploads/", "https://www.roaminglove.com/wp-content/uploads/", "http://127.0.0.1:7000/wp-content/uploads/");
+                                                    $ogImgSrc = $parent->description;
+                                                    $imgsrc = str_replace($potentialImgHostPaths,'https://roaminglove.imgix.net/', $ogImgSrc);
+                                                ?>
+
+                                                <img src="<?php echo $imgsrc ?>?w=249&h=249&fit=crop&crop=entropy&auto=compress,format">
+                                                <h6><div><span>All <?php echo $parent->name; ?> Stories</span></div></h6>
+                                                <!-- <div>Post Count:<?php echo $parent->count; ?></div> -->
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
