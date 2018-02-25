@@ -9,7 +9,7 @@
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 
-	<?php the_title( '<h1 class="post__title">', '</h1>' ); ?>
+	<?php the_title( '<h1 class="post__title"><span>', '</span></h1>' ); ?>
 
 	<div class="post__meta">
 

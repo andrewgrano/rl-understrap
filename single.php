@@ -38,7 +38,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 
 			<div class="row justify-content-md-center">
-				<div class="col-lg-9 col-md-10">
+				<div class="col-lg-9 col-md-11">
 
 					<?php while ( have_posts() ) : the_post(); ?>
 
@@ -46,9 +46,9 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 						<?php
 						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
+						// if ( comments_open() || get_comments_number() ) :
+						// 	comments_template();
+						// endif;
 						?>
 				</div>
 				<div class="col-sm-12">

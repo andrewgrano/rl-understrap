@@ -10,6 +10,10 @@
 
     .footerMain {
         padding: 35px 0 25px 0;
+
+        @include media-breakpoint-down(xs) {
+            padding: 25px 0 15px 0;
+        }
     }
 
     .footerAbout {
@@ -17,8 +21,22 @@
         color: $dark-gray;
         padding: 30px 25px;
 
+        @include media-breakpoint-down(sm) {
+            padding: 15px 20px;
+        }
+
         &Section {
             margin-bottom: 65px;
+
+            @include media-breakpoint-down(md) {
+                font-size: 17px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                font-size: 16px;
+                margin-bottom: 35px;
+            }
+
         }
 
         &__heading {
@@ -27,11 +45,24 @@
             font-weight: 700;
             line-height: 1.4;
             border-bottom: 7px solid $primary-color;
+
+            @include media-breakpoint-down(md) {
+                font-size: 1.2em;
+            }
         }
 
         .footerAboutSection--contribute {
+
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 45px;
+            }
+
             .btn {
                 margin-top: 20px;
+
+                @include media-breakpoint-down(xs) {
+                    font-size: 13px;
+                }
             }
         }
 
@@ -48,7 +79,7 @@
         margin-bottom: 25px;
 
         ul {
-            margin: 0 0 0 40px;
+            margin: 0;
             padding: 0;
             list-style: none;
 
@@ -61,12 +92,31 @@
                 margin-right: 4%;
                 display: inline;
 
+                @include media-breakpoint-down(xs) {
+                    display: block;
+                    margin-right: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
                 a {
                     text-decoration: none;
                     text-transform: lowercase;
                     font-family: $displayFont;
                     font-size: 20px;
                     color: $black;
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 18px;
+                    }
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        color: $secondary-color;
+                    }
                 }
             }
         }
@@ -79,6 +129,13 @@
         margin-right: auto;
         margin-left: auto;
         text-align: center;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: $white;
+        }
+
     }
 
 
@@ -111,6 +168,19 @@
     margin-bottom: 80px;
     text-align: center;
 
+    @include media-breakpoint-down(lg) {
+        margin-top: 55px;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin-top: 30px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+
     & > div {
         background: #FAFAF8;
         display: inline-block;
@@ -122,6 +192,14 @@
         @include transition(all .15s linear);
         z-index:0;
         position:relative;
+
+        @include media-breakpoint-down(lg) {
+            width: 200px;
+        }
+
+        @include media-breakpoint-down(md) {
+            width: 220px;
+        }
 
         @include media-breakpoint-down(sm) {
             width: 49%;
@@ -136,10 +214,6 @@
             transform: rotate(5deg);
             z-index: 3;
             margin-left: -5px;
-
-            @include media-breakpoint-down(lg) {
-                display: none;
-            }
         }
 
         &:nth-child(3n) {
@@ -159,6 +233,16 @@
             transform: rotate(8deg);
         }
 
+        &:nth-child(5),
+        &:nth-child(6),
+        &:nth-child(7),
+        &:nth-child(8) {
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
+
+
         // &:hover {
         //     transform: rotate(0deg);
         //     transform: scale(1.2));            //     z-index:10;
@@ -168,10 +252,6 @@
         img {
             display: block;
             width: inherit;
-
-            @media screen and (max-width: 945px) {
-                width: 155px;
-            }
 
             @include media-breakpoint-down(sm) {
                 width: 100%;

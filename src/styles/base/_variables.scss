@@ -15,3 +15,7 @@ $green: #26bb85;
 $primary-color: $orange;
 $secondary-color: $teal;
 $tertiary-color: $red;
+
+$primary-color-darker: darken( $primary-color, 30% );
+$secondary-color-darker: darken( $secondary-color, 15% );
+$tertiary-color-darker: darken( $tertiary-color, 30% );

@@ -16,6 +16,12 @@
     text-align: center;
     text-decoration: none;
 
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: none;
+    }
+
     &Img {
         margin-top: 25px;
         margin-bottom: 40px;
@@ -60,6 +66,18 @@
     &__author {
         font-size: 14px;
         font-style: italic;
+
+        span {
+            em {
+                font-style: normal;
+            }
+
+            &:last-child {
+                em {
+                    display: none;
+                }
+            }
+        }
     }
 
     &__desc {

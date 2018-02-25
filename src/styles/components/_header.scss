@@ -122,6 +122,13 @@
                     margin-right: 0;
                 }
 
+                &:before {
+                    @include media-breakpoint-down(sm) {
+                        display: none;
+                    }
+                }
+
+
                 a {
                     color: $black;
                     font-size: 23px;
@@ -148,6 +155,13 @@
         position: absolute;
         right: 20px;
         top: -20px;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: $white;
+        }
+
     }
 
 }

@@ -26,30 +26,32 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			$author_name ) : get_userdata( intval( $author ) );
 		?>
 
-		<h1 class="pageHeading"><?php esc_html_e( 'Travel Stories by', 'understrap' ); ?> <?php echo esc_html( $curauth->nickname ); ?></h1>
+		<div class="authorPageHeader">
 
-		<?php if ( ! empty( $curauth->last_name ) ) : ?>
-			<div class="authorPageHeader__desc">
-				<?php echo esc_html($curauth->last_name) ?>
-			</div>
-		<?php endif; ?>
+			<h1 class="pageHeading"><?php esc_html_e( 'Travel Stories by', 'understrap' ); ?> <?php echo esc_html( $curauth->nickname ); ?></h1>
 
-		<?php if ( ! empty( $curauth->first_name ) ) : ?>
-			<div class="authorPageHeader__link">
-				Follow <?php echo esc_html( $curauth->nickname ); ?>:
-				<?php
+			<?php if ( ! empty( $curauth->last_name ) ) : ?>
+				<div class="authorPageHeader__desc">
+					<?php echo esc_html($curauth->last_name) ?>
+				</div>
+			<?php endif; ?>
 
-					$search = array('[', ']');
-					$replace   = array('<', '>');
-					echo str_replace($search,$replace,$curauth->first_name)
-				?>
-			</div>
-		<?php endif; ?>
+			<?php if ( ! empty( $curauth->first_name ) ) : ?>
+				<div class="authorPageHeader__link">
+					Follow <?php echo esc_html( $curauth->nickname ); ?>:
+					<?php
+
+						$search = array('[', ']');
+						$replace   = array('<', '>');
+						echo str_replace($search,$replace,$curauth->first_name)
+					?>
+				</div>
+			<?php endif; ?>
+		</div>
 
 
 
-
-		<div class="row justify-content-md-center">
+		<div class="row justify-content-md-center justify-content-lg-start">
 
 			<!-- The Loop -->
 			<?php if ( have_posts() ) : ?>
@@ -72,12 +74,12 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
             <?php
             	$authorObject = get_queried_object();
+            	$author_id = get_the_author_meta('ID');
             	$authorCount = count_user_posts($author_id);
-
 
 				if(is_author()){
 					if($authorCount > 9 ) {
-					   $author_id = get_the_author_meta('ID');
+
 					   $name = get_the_author_meta('display_name');
 					   echo do_shortcode('[ajax_load_more author="'.$author_id.'" container_type="div" post_type="post" posts_per_page="9" offset="9" pause="true" scroll="false" transition="fade" button_label="View More Stories by '.$curauth->nickname.'" button_loading_label="Loading..." transition_container="false" css_classes="row"]');
 					}

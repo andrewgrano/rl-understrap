@@ -1,0 +1,25 @@
+.contribute {
+
+    h4 {
+        @include media-breakpoint-down(xs) {
+            font-size: 1.3rem;
+        }
+    }
+    h5 {
+        margin-top: 15px;
+
+        @include media-breakpoint-down(xs) {
+            font-size: 1.1rem;
+        }
+
+        a {
+            color: $secondary-color;
+        }
+    }
+
+    ul {
+        @include media-breakpoint-down(sm) {
+            margin-left: 0;
+        }
+    }
+}

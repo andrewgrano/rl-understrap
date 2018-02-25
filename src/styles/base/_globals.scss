@@ -7,7 +7,7 @@ body {
     color: $black;
     position: relative;
 
-    @media screen and (max-width: 479px) {
+    @include media-breakpoint-down(xs) {
         font-size: 15px;
         line-height: 1.8;
     }
@@ -16,11 +16,12 @@ body {
 a,
 a:visited {
     color: $black;
+    text-decoration: underline;
 
     &:hover,
     &:active,
     &:focus {
-        color: $secondary-color;
+        color: $black;
     }
 }
 
@@ -30,6 +31,15 @@ a:visited {
     margin: 0 0 1em 0;
     line-height: 1.2;
     font-weight: 700;
+
+    @include media-breakpoint-down(sm) {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    @include media-breakpoint-down(xs) {
+        font-size: 26px;
+    }
 }
 
 .hr--primary {

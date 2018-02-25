@@ -40,6 +40,10 @@
         border-top: 7px solid $primary-color;
         border-bottom: 7px solid $primary-color;
 
+        @include media-breakpoint-down(lg) {
+            height: 200px;
+        }
+
         @include media-breakpoint-down(md) {
             height: 170px;
         }
@@ -68,6 +72,12 @@
         a {
             color: $white;
             text-decoration: underline;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: $primary-color;
+            }
         }
     }
 

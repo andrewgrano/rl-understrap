@@ -3,20 +3,24 @@
     height: auto;
 }
 
-.btn-primary {
+.btn-primary,
+a.btn-primary {
     background-color: $secondary-color;
+    color: $white;
     border: 2px solid $white;
     padding: 9px 18px;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     font-family: $defaultFont;
     font-weight: 600;
+    text-decoration: none;
 
     &:hover,
     &:active,
     &:focus {
         background-color: darken( $secondary-color, 15% );
         border-color: $white;
+        color: $white;
     }
 }
 
@@ -48,8 +52,6 @@ button.alm-load-more-btn.btn-loadmore {
     }
 
 
-
-
     &:hover,
     &:active,
     &:focus {
@@ -58,6 +60,7 @@ button.alm-load-more-btn.btn-loadmore {
 
     &.loading {
         &:before {
+            display: none;
         }
     }
 

@@ -31,7 +31,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 						the_archive_description( '<img src="', '">' );
 						?>
 					</header><!-- .page-header -->
-					<div class="row justify-content-md-center">
+					<div class="row justify-content-md-center justify-content-lg-start">
 						<?php /* Start the Loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 							<div class="col-lg-4 col-md-6">

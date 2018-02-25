@@ -69,7 +69,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<ul class="list-unstyled list-inline">
 						<li class="linkOverline"><a href="/destinations">destinations</a></li>
 						<li class="linkOverline js-scrollToAbout"><a href="">about</a></li>
-						<li class="linkOverline"><a href="">contribute</a></li>
+						<li class="linkOverline"><a href="/contribute">contribute</a></li>
 						<li class="headerSearch d-none d-md-inline-block">
 							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								 width="63.171px" height="63.167px" viewBox="909.954 909.911 63.171 63.167"

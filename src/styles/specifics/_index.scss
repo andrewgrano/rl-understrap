@@ -100,6 +100,18 @@
                         @include media-breakpoint-down(xs) {
                             font-size: 14px;
                         }
+
+                        span {
+                            em {
+                                font-style: normal;
+                            }
+
+                            &:last-child {
+                                em {
+                                    display: none;
+                                }
+                            }
+                        }
                     }
                 }
             }

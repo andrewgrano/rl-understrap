@@ -53,7 +53,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 									<?php the_title(); ?>
 								</h3>
 								<p>
-									<?php understrap_posted_by(); ?> / <?php foreach((get_the_category()) as $category) { echo ' <span> ' . $category->cat_name . ' </span> '; } ?>
+									<?php understrap_posted_by(); ?> / <?php foreach((get_the_category()) as $category) { echo ' <span> ' . $category->cat_name . '<em>,</em> </span> '; } ?>
 								</p>
 							</div>
 						</a>
@@ -86,7 +86,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 											<?php the_title(); ?>
 										</div>
 										<div class="featureWidget__author">
-											<?php understrap_posted_by(); ?> / <?php foreach((get_the_category()) as $category) { echo ' <span> ' . $category->cat_name . ' </span> '; } ?>
+											<?php understrap_posted_by(); ?> / <?php foreach((get_the_category()) as $category) { echo ' <span> ' . $category->cat_name . '<em>,</em> </span> '; } ?>
 										</div>
 									</div>
 									<div class="featureWidgetImg">
@@ -139,7 +139,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 					query_posts( $query_string . '&posts_per_page=9&offset=3' );
 				 ?>
 
-				<div class="row justify-content-md-center">
+				<div class="row justify-content-md-center justify-content-lg-start">
 
 					<?php /* Start the Loop */ ?>
 

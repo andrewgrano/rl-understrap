@@ -1,7 +1,63 @@
+.single-post {
+    .headerWindow {
+        @include media-breakpoint-down(sm) {
+            border-top: 7px solid $primary-color;
+        }
+
+        .parallax-static-content {
+            h1 {
+                @include media-breakpoint-down(sm) {
+                    display: none;
+                }
+            }
+        }
+
+        & + .hr--primary {
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+    }
+}
+
 .post {
     &__title {
         font-weight: 700;
         margin: 55px 0 10px 0;
+
+        @include media-breakpoint-down(md) {
+            margin-top: 25px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: 1em;
+            margin-top: 0;
+            margin-bottom: -20px;
+            margin-right: 5%;
+            border-left: 10px solid $primary-color;
+            position: relative;
+            top: -43px;
+            z-index: 9;
+            padding-top: 3px;
+        }
+
+        @include media-breakpoint-down(xs) {
+            top: -36px;
+        }
+
+        span {
+            @include media-breakpoint-down(sm) {
+                background: $primary-color;
+                color: $white;
+                display: inline;
+                margin-top: 0;
+                line-height: 1.25;
+                padding-right: 10px;
+                padding-top: 3px;
+                font-size: 1.8em;
+                white-space: pre-wrap;
+            }
+        }
     }
 
     &__meta {
@@ -11,6 +67,7 @@
 
         a {
             color: #999;
+            text-decoration: underline;
         }
     }
 
@@ -55,6 +112,16 @@
             }
         }
 
+        a {
+            color: $secondary-color;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: $secondary-color-darker;
+            }
+        }
+
         img {
             margin: 1em 0;
             border: 3px solid #ccc;
@@ -74,14 +141,51 @@
     border-top: 1px solid;
     border-bottom: 1px solid;
     padding: 25px 10px;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     margin-top: 50px;
+
+    @include media-breakpoint-down(sm) {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+
+    &__name {
+        margin-bottom: 10px;
+
+        a {
+            text-decoration: underline;
+        }
+    }
 
     &__link {
         a {
             color: $secondary-color;
             position: relative;
             margin-right: 15px;
+            text-decoration: underline;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: $secondary-color-darker;
+            }
+
+            &:after {
+                content: " ";
+                background: $black;
+                position: absolute;
+                top: 2px;
+                right: -11px;
+                width: 1px;
+                height: 20px;
+            }
+
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
         }
     }
 

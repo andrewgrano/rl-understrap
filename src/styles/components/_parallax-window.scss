@@ -1,7 +1,7 @@
 $parallax-window-height: 255px;
 $parallax-background-height: $parallax-window-height * 2;
 
-$parallax-window-height--md: 200px;
+$parallax-window-height--md: 186px;
 $parallax-background-height--md: $parallax-window-height--md * 2;
 
 $parallax-window-height--sm: 115px;
@@ -20,16 +20,16 @@ $parallax-background-height--xs: $parallax-window-height--xs * 2;
   width: 100%;
   opacity: 0;
 
-  @include media-breakpoint-down(lg) {
+  // @include media-breakpoint-down(lg) {
+  //   height: $parallax-window-height--lg;
+  // }
+
+  @include media-breakpoint-down(md) {
     height: $parallax-window-height--md;
   }
 
-  @include media-breakpoint-down(md) {
-    height: $parallax-window-height--sm;
-  }
-
   @include media-breakpoint-down(sm) {
-    height: $parallax-window-height--xs;
+    height: $parallax-window-height--sm;
   }
 }
 

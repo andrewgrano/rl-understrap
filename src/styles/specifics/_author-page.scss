@@ -1,0 +1,65 @@
+.authorPageHeader {
+    margin-top: 40px;
+    margin-bottom: 60px;
+
+    .pageHeading {
+        margin: 0 0 10px 0;
+    }
+
+    &__desc,
+    &__link {
+        background: $light-gray;
+        color: $dark-gray;
+        display: inline-block;
+        padding: 3px 10px;
+        font-style: italic;
+        margin-left: 35px;
+        margin-top: 10px;
+
+        @include media-breakpoint-down(sm) {
+            margin-left: 0;
+            display: block;
+            text-align: center;
+        }
+    }
+
+    &__link {
+        margin-left: 60px;
+
+        @include media-breakpoint-down(sm) {
+            margin-left: 0;
+        }
+
+        a {
+            color: $dark-gray;
+            margin-left: 10px;
+            font-style: normal;
+            position: relative;
+
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
+
+            &:after {
+                content: " ";
+                position: absolute;
+                right: -7px;
+                top: 1px;
+                width: 1px;
+                height: 20px;
+                background: $black;
+
+                @include media-breakpoint-down(sm) {
+                    display: none;
+                }
+            }
+
+        }
+
+
+
+
+    }
+}
