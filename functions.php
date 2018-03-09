@@ -122,3 +122,15 @@ add_filter('request', 'change_wp_search_size'); // Hook our custom function onto
 ------------------------------------------------- */
 
 show_admin_bar(false);
+
+
+/* =custom -- replace image source on post pages with imgix source
+------------------------------------------------- */
+function replace_content($content)
+{
+$potentialImgHostPaths = array("https://www.adminroaminglove.com/wp-content/uploads/", "https://adminroaminglove.com/wp-content/uploads/", "https://www.roaminglove.com/wp-content/uploads/", "http://127.0.0.1:7000/wp-content/uploads/");
+$content = str_replace($potentialImgHostPaths, 'https://roaminglove.imgix.net/',$content);
+return $content;
+}
+add_filter('the_content','replace_content');
+

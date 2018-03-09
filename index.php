@@ -114,7 +114,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 										?>
 									</div>
 									<div class="featureWidget__desc">
-										<?php echo wp_trim_words( get_the_content(), 40, '...')  ?>
+										<?php echo wp_trim_words( get_the_content(), 39, '...')  ?>
 									</div>
 									<div class="btn btn-primary">
 										 Continue Reading
@@ -176,63 +176,63 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 				<h3 class="pageHeading">Read Travel Stories From...</h3>
 				<div class="row">
 					<div class="col-md-4 col-sm-6">
-						<a href="/category/Africa" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/05/IMG_1582.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+						<a href="/places/Africa" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/05/IMG_1582.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
 				            <h6>
 				              <div><span>Africa</span></div>
 				            </h6>
 			            </a>
 			        </div>
 		            <div class="col-md-4 col-sm-6">
-			            <a href="/category/Asia" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/04/HFA_6084-XL_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+			            <a href="/places/Asia" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/04/HFA_6084-XL_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
 				            <h6>
 				              <div><span>Asia</span></div>
 				            </h6>
 			            </a>
 			        </div>
 		            <div class="col-md-4 col-sm-6">
-			            <a href="/category/Canada" class="locationWidget"><img src="https://roaminglove.imgix.net/2016/12/IMG_2447_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+			            <a href="/places/Canada" class="locationWidget"><img src="https://roaminglove.imgix.net/2016/12/IMG_2447_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
 				            <h6>
 				              <div><span>Canada</span></div>
 				            </h6>
 			            </a>
 			        </div>
 		            <div class="col-md-4 col-sm-6">
-			            <a href="/category/Caribbean" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/04/UriramaBeach_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+			            <a href="/places/Caribbean" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/04/UriramaBeach_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
 				            <h6>
 				              <div><span>Caribbean</span></div>
 				            </h6>
 			            </a>
 			        </div>
 		            <div class="col-md-4 col-sm-6">
-			            <a href="/category/Europe" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/01/6_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+			            <a href="/places/Europe" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/01/6_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
 				            <h6>
 				              <div><span>Europe</span></div>
 				            </h6>
 			            </a>
 			        </div>
 		            <div class="col-md-4 col-sm-6">
-			            <a href="/category/Latin-America" class="locationWidget"><img src="https://roaminglove.imgix.net/2016/08/IMG_4026_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+			            <a href="/places/Latin-America" class="locationWidget"><img src="https://roaminglove.imgix.net/2016/08/IMG_4026_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
 				            <h6>
 				              <div><span>Latin America</span></div>
 				            </h6>
 			            </a>
 			        </div>
 		            <div class="col-md-4 col-sm-6">
-			            <a href="/category/Middle-East" class="locationWidget"><img src="https://roaminglove.imgix.net/2016/12/DSC3297-Copy_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+			            <a href="/places/Middle-East" class="locationWidget"><img src="https://roaminglove.imgix.net/2016/12/DSC3297-Copy_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
 				            <h6>
 				              <div><span>Middle East</span></div>
 				            </h6>
 			            </a>
 			        </div>
 		            <div class="col-md-4 col-sm-6">
-			            <a href="/category/Oceania" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/05/oceania-2.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+			            <a href="/places/Oceania" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/05/oceania-2.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
 				            <h6>
 				              <div><span>Oceania</span></div>
 				            </h6>
 			            </a>
 			        </div>
 		            <div class="col-md-4 col-sm-6 offset-sm-3 offset-md-0">
-			            <a href="/category/United-States" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/03/D1C56C2D-EDB8-49A2-BBFD-8B6AA8BC3D40_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
+			            <a href="/places/United-States" class="locationWidget"><img src="https://roaminglove.imgix.net/2017/03/D1C56C2D-EDB8-49A2-BBFD-8B6AA8BC3D40_opt.jpg?w=350&amp;h=185&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format" class="img-responsive">
 				            <h6>
 				              <div><span>United States</span></div>
 				            </h6>

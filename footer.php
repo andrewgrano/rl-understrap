@@ -29,15 +29,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 	        				Want to read about travel destinations around the world?
 	        			</h4>
 		        		<div class="footerAbout__desc">
-		        			Emerse yourself with travel stories from France to Ubeckestan to Vietnam, and nearly everywhere else in the world! We've collected stories from all types of travelers - from extreme bike riders to city explorers to hitchhikers.  Travel means something different to everyone, so we invite everyone to share their unique adventures on Roaming Love.
+		        			Immerse yourself with travel stories from France to Uzbekistan to Vietnam, and nearly everywhere else in the world! We've collected stories from all types of travelers - from extreme bike riders to city explorers to hitchhikers.  Travel means something different to everyone, so we invite everyone to share their unique adventures on Roaming Love.
 		        		</div>
 		        	</div>
 
 					<div class="polaroidWrapper d-block d-md-none">
-						<div><img src="https://roaminglove.imgix.net/2017/04/4_opt-9.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=faces&amp;auto=compress,format"></div>
-						<div><img src="https://roaminglove.imgix.net/2017/01/IMG_5414_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format"></div>
-						<div><img src="https://roaminglove.imgix.net/2017/04/14448844_1102632499821559_3434613000402549386_n_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format"></div>
-						<div><img src="https://roaminglove.imgix.net/2017/04/13179388_1340027682690548_993915160715889774_n_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=faces&amp;auto=compress,format"></div>
+						<div><img src="https://roaminglove.imgix.net/2018/02/IMG_3213_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=faces&amp;auto=compress,format"></div>
+
+						<div><img src="https://roaminglove.imgix.net/2018/01/IMG_2950_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=faces&amp;auto=compress,format"></div>
+
+						<div><img src="https://roaminglove.imgix.net/2018/01/IMG_3452_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=faces&amp;auto=compress,format"></div>
+
+						<div><img src="https://roaminglove.imgix.net/2016/12/image1-1_opt-2.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format"></div>
 					</div>
 
 
@@ -68,14 +71,27 @@ $container = get_theme_mod( 'understrap_container_type' );
 	        	</div>
 	        	<div class="col-xl-7 col-lg-6 col-md-5">
 					<div class="polaroidWrapper d-none d-md-block">
-						<div><img src="https://roaminglove.imgix.net/2017/04/4_opt-9.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=faces&amp;auto=compress,format"></div>
-						<div><img src="https://roaminglove.imgix.net/2017/01/IMG_5414_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format"></div>
-						<div><img src="https://roaminglove.imgix.net/2017/04/14448844_1102632499821559_3434613000402549386_n_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format"></div>
-						<div><img src="https://roaminglove.imgix.net/2017/04/13179388_1340027682690548_993915160715889774_n_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=faces&amp;auto=compress,format"></div>
-						<div><img src="https://roaminglove.imgix.net/2017/05/DSC_1141_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=faces&amp;auto=compress,format"></div>
-						<div><img src="https://roaminglove.imgix.net/2017/04/4_opt-9.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=faces&amp;auto=compress,format"></div>
-						<div><img src="https://roaminglove.imgix.net/2017/01/IMG_5414_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format"></div>
-						<div><img src="https://roaminglove.imgix.net/2017/04/14448844_1102632499821559_3434613000402549386_n_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format"></div>
+						<div><img src="https://roaminglove.imgix.net/2018/02/IMG_3213_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=faces&amp;auto=compress,format"></div>
+
+						<div><img src="https://roaminglove.imgix.net/2018/01/IMG_2950_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=faces&amp;auto=compress,format"></div>
+
+						<div><img src="https://roaminglove.imgix.net/2018/01/IMG_3452_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=faces&amp;auto=compress,format"></div>
+
+						<div><img src="https://roaminglove.imgix.net/2016/12/image1-1_opt-2.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format"></div>
+
+						<div><img src="https://roaminglove.imgix.net/2017/06/tc4_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=faces&amp;auto=compress,format"></div>
+
+						<div><img src="https://roaminglove.imgix.net/2018/01/FullSizeRender-29_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format"></div>
+
+						<div><img src="https://roaminglove.imgix.net/2018/01/fullsizeoutput_419_opt-1.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format"></div>
+
+
+						<div><img src="https://roaminglove.imgix.net/2018/01/IMG_2680_opt.jpg?w=200&amp;h=215&amp;fit=crop&amp;crop=entropy&amp;auto=compress,format"></div>
+
+
+
+
+
 					</div>
 	        	</div>
         	</div>
