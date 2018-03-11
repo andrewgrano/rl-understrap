@@ -128,7 +128,7 @@ show_admin_bar(false);
 ------------------------------------------------- */
 function replace_content($content)
 {
-$potentialImgHostPaths = array("https://www.adminroaminglove.com/wp-content/uploads/", "https://adminroaminglove.com/wp-content/uploads/", "https://www.roaminglove.com/wp-content/uploads/", "http://127.0.0.1:7000/wp-content/uploads/");
+$potentialImgHostPaths = array("https://www.roaminglove.com/wp-content/uploads/", "http://127.0.0.1:7000/wp-content/uploads/","http://roaminglove.wpengine.com/wp-content/uploads/","https://roaminglove.wpengine.com/wp-content/uploads/");
 $content = str_replace($potentialImgHostPaths, 'https://roaminglove.imgix.net/',$content);
 return $content;
 }

@@ -11,7 +11,7 @@
     <a href="<?php the_permalink(); ?>">
         <div class="postWidget__img">
             <?php
-            $potentialImgHostPaths = array("https://www.adminroaminglove.com/wp-content/uploads/", "https://adminroaminglove.com/wp-content/uploads/", "https://www.roaminglove.com/wp-content/uploads/", "http://127.0.0.1:7000/wp-content/uploads/");
+            $potentialImgHostPaths = array("https://www.roaminglove.com/wp-content/uploads/", "http://127.0.0.1:7000/wp-content/uploads/","http://roaminglove.wpengine.com/wp-content/uploads/","https://roaminglove.wpengine.com/wp-content/uploads/");
             $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "size" );
             $imgsrc = str_replace($potentialImgHostPaths,'https://roaminglove.imgix.net/', $thumbnail[0]);
             ?>
