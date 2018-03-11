@@ -58,7 +58,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		        	<div class="footerAboutSection footerAboutSection--newsletter">
 	        			<h4 class="footerAbout__heading">
-	        				Want to stay up to date????
+	        				Want to stay up to date?????
 	        			</h4>
 		        		<div class="footerAbout__desc">
 							We're constantly publishing new travel stories. Sign up for our weekly newsletter.  We'll keep you up to date with all our newest travel stories!
